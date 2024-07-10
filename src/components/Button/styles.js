@@ -4,12 +4,12 @@ const width_ratio = Dimensions.get('screen').width / 390;
 const height_ratio = Dimensions.get('screen').height / 844;
 
 const styles = StyleSheet.create({
-  toggleContainer: {
+  buttonContainer: {
     flexDirection: 'row',
     alignContent: 'center',
     justifyContent: 'center',
   },
-  textContainer: {
+  contentContainer: {
     paddingVertical: 12 * height_ratio,
     paddingHorizontal: 24 * width_ratio,
     backgroundColor: 'lightgray',

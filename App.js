@@ -12,6 +12,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/Home';
 import MedicationProvider from './src/contexts/medication';
+import MyPageScreen from './src/screens/MyPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,13 @@ const App = () => {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="MyPage"
+            component={MyPageScreen}
             options={{
               headerShown: false,
             }}
