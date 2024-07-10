@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingVertical: 12 * height_ratio,
     paddingHorizontal: 24 * width_ratio,
-    backgroundColor: 'lightgray',
-    borderRadius: 8 * height_ratio,
+    backgroundColor: '#D4DDEB',
+    borderRadius: 8,
   },
 });
 

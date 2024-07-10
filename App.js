@@ -12,7 +12,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/Home';
 import MedicationProvider from './src/contexts/medication';
-import MyPageScreen from './src/screens/MyPage';
+import ModifyScreen from './src/screens/Modify';
+import UserProvider from './src/contexts/user';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,26 +25,28 @@ const App = () => {
   };
 
   return (
-    <MedicationProvider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="MyPage"
-            component={MyPageScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </MedicationProvider>
+    <UserProvider>
+      <MedicationProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Home"
+              component={HomeScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Modify"
+              component={ModifyScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </MedicationProvider>
+    </UserProvider>
   );
 };
 

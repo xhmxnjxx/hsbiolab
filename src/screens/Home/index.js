@@ -6,16 +6,18 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {useContext, useState} from 'react';
 import CustomButton from '../../components/Button';
 import {MedicationContext} from '../../contexts/medication';
+import {UserContext} from '../../contexts/user';
 
 const HomeScreen = ({navigation}) => {
-  const {state, actions} = useContext(MedicationContext);
+  const userContext = useContext(UserContext);
+  const medicationContext = useContext(MedicationContext);
 
   const [isAdded, setIsAdded] = useState(false);
   const handleAddPress = () => {
     setIsAdded(!isAdded);
   };
-  const handleMyPagePress = () => {
-    navigation.navigate('MyPage');
+  const handleModifyPress = () => {
+    navigation.navigate('Modify');
   };
 
   return (
@@ -27,13 +29,13 @@ const HomeScreen = ({navigation}) => {
           handleButtonPress={handleAddPress}></CustomButton>
         <MedicationRoutineCard
           isAdded={isAdded}
-          name={state.name}
-          time={state.time}
-          memo={state.memo}></MedicationRoutineCard>
+          name={userContext.state.name}
+          time={medicationContext.state.time}
+          memo={medicationContext.state.memo}></MedicationRoutineCard>
       </View>
       <CustomButton
-        content="마이페이지"
-        handleButtonPress={handleMyPagePress}></CustomButton>
+        content="수정하기"
+        handleButtonPress={handleModifyPress}></CustomButton>
     </SafeAreaView>
   );
 };
