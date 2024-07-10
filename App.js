@@ -6,10 +6,14 @@
  */
 
 import React from 'react';
-import {SafeAreaView, useColorScheme} from 'react-native';
+import {useColorScheme} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import CustomHeader from './src/components/Header';
-import MedicationRoutineCard from './src/components/Medication/Routine';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeScreen from './src/screens/Home';
+import MedicationProvider from './src/contexts/medication';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -19,10 +23,19 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <CustomHeader date={'5월 30일'}></CustomHeader>
-      <MedicationRoutineCard></MedicationRoutineCard>
-    </SafeAreaView>
+    <MedicationProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </MedicationProvider>
   );
 };
 
