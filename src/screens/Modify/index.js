@@ -49,7 +49,7 @@ const ModifyScreen = ({navigation}) => {
           placeholder="이름"
           onChangeText={handleNameChange}></TextInput>
         <CustomButton
-          content="변경"
+          content="수정"
           handleButtonPress={handleModifyUserPress}></CustomButton>
       </View>
       <View style={styles.medicationContainer}>
@@ -66,7 +66,7 @@ const ModifyScreen = ({navigation}) => {
             onChangeText={handleMemoChange}></TextInput>
         </View>
         <CustomButton
-          content="변경"
+          content="수정"
           handleButtonPress={handleModifyMedicationPress}></CustomButton>
       </View>
 

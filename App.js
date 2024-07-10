@@ -14,6 +14,7 @@ import HomeScreen from './src/screens/Home';
 import MedicationProvider from './src/contexts/medication';
 import ModifyScreen from './src/screens/Modify';
 import UserProvider from './src/contexts/user';
+import MetricsProvider from './src/contexts/metrics';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,28 +26,30 @@ const App = () => {
   };
 
   return (
-    <UserProvider>
-      <MedicationProvider>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Home"
-              component={HomeScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
-              name="Modify"
-              component={ModifyScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </MedicationProvider>
-    </UserProvider>
+    <MedicationProvider>
+      <MetricsProvider>
+        <UserProvider>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen
+                name="Home"
+                component={HomeScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Modify"
+                component={ModifyScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </UserProvider>
+      </MetricsProvider>
+    </MedicationProvider>
   );
 };
 

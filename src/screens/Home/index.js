@@ -25,7 +25,7 @@ const HomeScreen = ({navigation}) => {
       <CustomHeader date={'5월 30일'}></CustomHeader>
       <View style={styles.bodyContainer}>
         <CustomButton
-          content={isAdded ? '등록 취소' : '등록'}
+          content={isAdded ? '등록 취소' : '루틴 등록'}
           handleButtonPress={handleAddPress}></CustomButton>
         <MedicationRoutineCard
           isAdded={isAdded}
