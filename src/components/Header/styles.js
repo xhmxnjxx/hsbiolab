@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   itemContainer: {
     flex: 1,
     flexDirection: 'row',
-    gap: 8,
+    gap: 16,
   },
   text: {
     fontSize: 16,
