@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16 * height_ratio,
-    fontWeight: 600,
+    fontWeight: '600',
     color: '#ffffff',
   },
 });

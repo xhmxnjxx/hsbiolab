@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 12 * height_ratio,
-    fontWeight: 600,
+    fontWeight: '600',
   },
   guidanceContainer: {
     flexDirection: 'row',
@@ -27,11 +27,11 @@ const styles = StyleSheet.create({
   },
   guidanceWeightedBlackText: {
     fontSize: 16 * height_ratio,
-    fontWeight: 600,
+    fontWeight: '600',
   },
   guidanceWeightedNotifyText: {
     fontSize: 16 * height_ratio,
-    fontWeight: 600,
+    fontWeight: '600',
     color: '#FF4D4F',
   },
   guidanceNormalBlackText: {
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
 
   contentWeightedText: {
     fontSize: 12 * height_ratio,
-    fontWeight: 600,
+    fontWeight: '600',
   },
   contentNormalText: {
     fontSize: 12 * height_ratio,
